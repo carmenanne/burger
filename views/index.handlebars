@@ -1,0 +1,14 @@
+<ul class = 'bugerList'>
+	{{#each burger}}
+		{{> burgers/burger-block}}
+	{{/each}}
+</ul>
+
+<form class = 'create-form'>
+	<div class = 'form-group'>
+		<label for='burger'></label>
+		<input type='text' id='burger'>
+	</div>
+	<button type='submit'>Submit</button>
+	<p>Enter a burger you want to eat, then click the "Submit" button.</p>
+</form>
