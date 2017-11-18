@@ -9,12 +9,12 @@ var burger = {
 		});
 	},
 	insertOne: function(cols, vals, cb){
-		orm.insertOne("burgers", function(res){
+		orm.insertOne("burgers", cols, vals, function(res){
 			cb(res);
 		});
 	},
-	updateOne: function(condition, cb){
-		orm.updateOne("burgers", condition, function(res){
+	updateOne: function(objColVals, condition, cb){
+		orm.updateOne("burgers", objColVals, condition, function(res){
 			cb(res);
 		});
 	}

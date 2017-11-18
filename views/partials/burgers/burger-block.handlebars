@@ -1,5 +1,8 @@
 <li>
-	{{burger_name}}
-
-	<button class = "change-devour">Devour It!</button>
+	<div class='btntable'>
+		{{burger_name}}
+	
+		<button class ="change-devour" data-id="{{id}}" data-newdevour='{{devoured}}'>
+		{{#if devoured}}Add to menu{{else}}Devour It!{{/if}}</button>
+	</div>
 </li>
