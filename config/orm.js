@@ -41,6 +41,7 @@ function objToSql(ob) {
 
 
 var orm = {
+	//selects all data from burgers table in burgers_db
 	selectAll: function(tableInput, cb){
 		var queryString = 'SELECT * FROM ' + tableInput;
 		connection.query(queryString, function(err, result){
@@ -48,10 +49,8 @@ var orm = {
 			cb(result);
 		});
 	},
+	//inserts new burger into burger table
 	insertOne: function(table, cols, vals, cb){
-		console.log(table)
-		console.log(cols.toString())
-		console.log(vals)
 		var queryString = 'INSERT INTO ' + table;
 		queryString += " (" + cols.toString() + ") ";
 		queryString += "VALUES (" + printQuestionMarks(vals.length) + ") ";
@@ -63,6 +62,7 @@ var orm = {
 			cb(result)
 		});
 	},
+	//updates value of current burger based on condition=id at the value devoured, not pulling in correct information currently...
 	updateOne: function(table, objColVals, condition, cb){
 		console.log(table)
 		console.log(objColVals)

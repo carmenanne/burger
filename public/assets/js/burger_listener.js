@@ -1,5 +1,6 @@
 $(function(){
-	console.log('test')
+	
+	//still getting POST 404 error, pulling correct id and 'devoured' state from table database, but not updating with the ajax request...
 	$('.change-devour').on('click', function(event){
 		console.log('YUUUMMMM')
 		var id = $(this).data('id');
@@ -33,6 +34,7 @@ $(function(){
 		);
 	});
 
+	//taking data from input field in form, posting it to burgers table w/ property burger_name, and reloading the page so new burger appears in browser
 	$('.create-form').on('submit', function(event){
 		event.preventDefault();
 

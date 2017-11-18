@@ -2,9 +2,10 @@ var express = require("express");
 
 var router = express.Router();
 
-// Import the model (cat.js) to use its database functions.
+// Import the model (burger.js) to use its database functions.
 var burger = require("../models/burger.js");
 
+//read function to display all burgers in burger database, along with a "Devour It" button, generated in partials handlebars file for each burger
 router.get('/', function(req, res){
 	burger.selectAll(function(data){
 		var hbsObject = {
@@ -16,6 +17,7 @@ router.get('/', function(req, res){
 
 });
 
+//when ajax request made, updates database by inserting the data sent by the event listener, at 'burger_name', also inserts id for burger, gives burger an id, provides other fields automatically since 'devoured' set to default false
 router.post('/api/burgers', function(req, res){
 	burger.insertOne([
 			'burger_name'
@@ -26,6 +28,7 @@ router.post('/api/burgers', function(req, res){
 		});
 });
 
+//still having issues with 'update' request
 router.put('/api/burgers/:id', function(req, res){
 	console.log("Put request test!!!!!!!!!!!!!!!")
 	console.log(res)
